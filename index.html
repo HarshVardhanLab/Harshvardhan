@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jenny - Product Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-sans light text-gray-800 overflow-x-hidden">
+    <!-- Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50 backdrop-blur-sm bg-opacity-90 transition-colors duration-300"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div
+          class="text-2xl font-bold text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300 magnetic-effect"
+          data-scale="1.1"
+        >
+          Harsh Vardhan
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            href="#home"
+            class="nav-link hover:text-orange-500 dark:hover:text-orange-400 relative group magnetic-effect transition-colors duration-300"
+            data-scale="1.1"
+          >
+            Home
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 dark:bg-orange-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#about"
+            class="nav-link hover:text-orange-500 dark:hover:text-orange-400 relative group magnetic-effect transition-colors duration-300"
+            data-scale="1.1"
+          >
+            About
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 dark:bg-orange-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#services"
+            class="nav-link hover:text-orange-500 dark:hover:text-orange-400 relative group magnetic-effect transition-colors duration-300"
+            data-scale="1.1"
+          >
+            Service
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 dark:bg-orange-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#resume"
+            class="nav-link hover:text-orange-500 dark:hover:text-orange-400 relative group magnetic-effect transition-colors duration-300"
+            data-scale="1.1"
+          >
+            Resume
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 dark:bg-orange-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#projects"
+            class="nav-link hover:text-orange-500 dark:hover:text-orange-400 relative group magnetic-effect transition-colors duration-300"
+            data-scale="1.1"
+          >
+            Projects
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 dark:bg-orange-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="nav-link hover:text-orange-500 dark:hover:text-orange-400 relative group magnetic-effect transition-colors duration-300"
+            data-scale="1.1"
+          >
+            Contact
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 dark:bg-orange-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <div
+            class="dark-mode-toggle text-orange-500 dark:text-orange-400"
+            id="dark-mode-toggle"
+          >
+            <i class="fas fa-moon text-xl transition-colors duration-300"></i>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center space-x-4">
+          <div
+            class="dark-mode-toggle text-orange-500 dark:text-orange-400"
+            id="mobile-dark-mode-toggle"
+          >
+            <i class="fas fa-moon text-xl transition-colors duration-300"></i>
+          </div>
+          <button
+            id="mobile-menu-button"
+            class="text-gray-800 dark:text-gray-200 focus:outline-none magnetic-effect"
+            data-scale="1.2"
+          >
+            <i
+              class="fas fa-bars text-2xl transition-transform duration-300"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-gray-800 py-4 px-6 shadow-lg transition-colors duration-300"
+      >
+        <a
+          href="#home"
+          class="block py-2 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 hover:pl-2"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="block py-2 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 hover:pl-2"
+          >About</a
+        >
+        <a
+          href="#services"
+          class="block py-2 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 hover:pl-2"
+          >Service</a
+        >
+        <a
+          href="#resume"
+          class="block py-2 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 hover:pl-2"
+          >Resume</a
+        >
+        <a
+          href="#projects"
+          class="block py-2 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 hover:pl-2"
+          >Projects</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300 hover:pl-2"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section with Three.js Background -->
+    <section
+      id="home"
+      class="pt-32 pb-20 px-6 bg-gray-50 dark:bg-gray-800 relative overflow-hidden min-h-screen flex items-center transition-colors duration-300"
+    >
+      <canvas class="hero-canvas"></canvas>
+
+      <!-- Floating shapes -->
+      <div
+        class="floating-shape"
+        style="
+          width: 200px;
+          height: 200px;
+          top: 20%;
+          left: 10%;
+          animation-delay: 0s;
+        "
+      ></div>
+      <div
+        class="floating-shape"
+        style="
+          width: 300px;
+          height: 300px;
+          bottom: 10%;
+          right: 15%;
+          animation-delay: 0.5s;
+        "
+      ></div>
+      <div
+        class="floating-shape"
+        style="
+          width: 150px;
+          height: 150px;
+          top: 60%;
+          left: 70%;
+          animation-delay: 1s;
+        "
+      ></div>
+
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center relative z-10"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0 animate-on-scroll">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            Hi, I’m <span class="text-gradient">Harsh Vardhan</span>
+          </h1>
+          <h2 class="text-2xl md:text-3xl mb-6">
+            Software Developer | AI & Cloud Enthusiast | Tech Innovator
+          </h2>
+          <div class="flex items-center mb-6">
+            <div
+              class="flex space-x-4 text-gray-600 dark:text-gray-400 transition-colors duration-300 text-xl"
+            >
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                class="hover:text-black dark:hover:text-white"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                class="hover:text-blue-700 dark:hover:text-blue-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://discord.gg/yourservercode"
+                target="_blank"
+                class="hover:text-indigo-600 dark:hover:text-indigo-400"
+              >
+                <i class="fab fa-discord"></i>
+              </a>
+              <a
+                href="https://instagram.com/yourusername"
+                target="_blank"
+                class="hover:text-pink-500 dark:hover:text-pink-400"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/yournumber"
+                target="_blank"
+                class="hover:text-green-600 dark:hover:text-green-400"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+            <span
+              class="ml-4 text-gray-600 dark:text-gray-400 transition-colors duration-300"
+              >Connect with me</span
+            >
+          </div>
+
+          <p
+            class="text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-300"
+          >
+            I craft powerful, scalable, and user-centric digital solutions —
+            from web apps to AI assistants. Let’s turn your vision into reality.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#projects"
+              class="bg-orange-500 dark:bg-orange-400 text-white px-6 py-3 rounded-md hover:bg-orange-600 dark:hover:bg-orange-300 transition-all duration-300 hover:shadow-lg magnetic-effect"
+              data-scale="1.05"
+              >🚀 View Portfolio</a
+            >
+            <a
+              href="#contact"
+              class="border border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-400 px-6 py-3 rounded-md hover:bg-orange-50 dark:hover:bg-orange-900 transition-all duration-300 hover:shadow-lg magnetic-effect"
+              data-scale="1.05"
+              >📬 Hire Me</a
+            >
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center animate-on-scroll">
+          <div class="relative hover-grow" id="profile-container">
+            <div
+              class="w-64 h-64 md:w-80 md:h-80 bg-orange-100 dark:bg-orange-900 rounded-full overflow-hidden shadow-xl transition-colors duration-300 border-[4px] border-orange-300 shadow-orange-400 dark:shadow-orange-800"
+            >
+              <img
+                src="assets/harshvardhan.jpeg"
+                alt="Profile"
+                class="w-full h-full object-cover transition-all duration-300"
+              />
+            </div>
+            <div
+              class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg glow-effect transition-colors duration-300"
+            >
+              <div
+                class="text-2xl font-bold text-orange-500 dark:text-orange-400 transition-colors duration-300"
+              >
+                10+
+              </div>
+              <div
+                class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+              >
+                Projects Experience
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a
+          href="#about"
+          class="text-orange-500 dark:text-orange-400 text-2xl magnetic-effect transition-colors duration-300"
+          data-scale="1.3"
+        >
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="py-20 px-6 bg-white dark:bg-gray-800 relative overflow-hidden transition-colors duration-300"
+    >
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0 animate-on-scroll">
+            <h2 class="text-3xl font-bold mb-6">
+              About <span class="text-gradient">Me</span>
+            </h2>
+
+            <p
+              class="text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-300"
+            >
+              I’m a <strong>Software Developer</strong> driven by curiosity,
+              creativity, and clean code. From building
+              <strong>AI tools</strong> and dynamic web apps to organizing tech
+              events like <strong>Hack Gear 1.0</strong>, I enjoy turning ideas
+              into impactful digital solutions.
+            </p>
+
+            <p
+              class="text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-300"
+            >
+              My strengths lie in rapid prototyping, backend engineering, and
+              blending technical logic with user-first design.
+              <br />
+              <em
+                >"Code is my canvas, logic is my brush — I create to solve, and
+                solve to create."</em
+              ><br />
+              <em
+                >"The best solutions aren't just functional — they're
+                thoughtful."</em
+              >
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div
+                class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg hover-grow transition-colors duration-300"
+              >
+                <div
+                  class="text-orange-500 dark:text-orange-400 text-xl mb-2 transition-colors duration-300"
+                >
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="font-bold">3+ Awards</h3>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                >
+                  Tech & Innovation
+                </p>
+              </div>
+              <div
+                class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg hover-grow transition-colors duration-300"
+              >
+                <div
+                  class="text-orange-500 dark:text-orange-400 text-xl mb-2 transition-colors duration-300"
+                >
+                  <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3 class="font-bold">10+ Projects</h3>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                >
+                  Completed
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="#contact"
+              class="bg-orange-500 dark:bg-orange-400 text-white px-6 py-3 rounded-md hover:bg-orange-600 dark:hover:bg-orange-300 transition-all duration-300 hover:shadow-lg inline-block magnetic-effect"
+              data-scale="1.05"
+            >
+              Download CV
+            </a>
+          </div>
+
+          <div class="md:w-1/2 animate-on-scroll">
+            <div class="relative">
+              <div
+                class="bg-orange-100 dark:bg-orange-900 rounded-xl p-8 shadow-lg hover-grow transition-colors duration-300"
+              >
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="skill-item">
+                    <div class="flex justify-between mb-2">
+                      <span class="font-medium">UI/UX Design</span>
+                      <span
+                        class="text-orange-500 dark:text-orange-400 transition-colors duration-300"
+                        >95%</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                    >
+                      <div
+                        class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
+                        style="width: 0%"
+                        data-width="95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="flex justify-between mb-2">
+                      <span class="font-medium">Web Design</span>
+                      <span
+                        class="text-orange-500 dark:text-orange-400 transition-colors duration-300"
+                        >90%</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                    >
+                      <div
+                        class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
+                        style="width: 0%"
+                        data-width="90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="flex justify-between mb-2">
+                      <span class="font-medium">Python Developer</span>
+                      <span
+                        class="text-orange-500 dark:text-orange-400 transition-colors duration-300"
+                        >70%</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                    >
+                      <div
+                        class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
+                        style="width: 0%"
+                        data-width="85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="flex justify-between mb-2">
+                      <span class="font-medium">Prototyping</span>
+                      <span
+                        class="text-orange-500 dark:text-orange-400 transition-colors duration-300"
+                        >92%</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                    >
+                      <div
+                        class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
+                        style="width: 0%"
+                        data-width="92%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="absolute -bottom-6 -left-6 w-32 h-32 bg-orange-500 dark:bg-orange-400 rounded-full opacity-10 -z-10 transition-colors duration-300"
+              ></div>
+              <div
+                class="absolute -top-6 -right-6 w-40 h-40 bg-orange-500 dark:bg-orange-400 rounded-full opacity-10 -z-10 transition-colors duration-300"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      class="py-20 px-6 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4 animate-on-scroll">
+          My <span class="text-gradient">Services</span>
+        </h2>
+        <p
+          class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12 animate-on-scroll transition-colors duration-300"
+        >
+          Comprehensive design solutions tailored to your business needs.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="service-card bg-white dark:bg-gray-700 p-8 rounded-lg transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mb-6 mx-auto service-icon transition-colors duration-300"
+            >
+              <i
+                class="fas fa-pencil-ruler text-orange-500 dark:text-orange-400 text-2xl transition-colors duration-300"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">UI/UX Design</h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-center transition-colors duration-300"
+            >
+              Crafting intuitive interfaces and seamless user experiences that
+              drive engagement and conversions.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="#"
+                class="text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center transition-colors duration-300"
+              >
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="service-card bg-white dark:bg-gray-700 p-8 rounded-lg transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mb-6 mx-auto service-icon transition-colors duration-300"
+            >
+              <i
+                class="fas fa-laptop-code text-orange-500 dark:text-orange-400 text-2xl transition-colors duration-300"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Web Design</h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-center transition-colors duration-300"
+            >
+              Building responsive, modern websites that represent your brand and
+              deliver results.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="#"
+                class="text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center transition-colors duration-300"
+              >
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="service-card bg-white dark:bg-gray-700 p-8 rounded-lg transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mb-6 mx-auto service-icon transition-colors duration-300"
+            >
+              <i
+                class="fas fa-mobile-alt text-orange-500 dark:text-orange-400 text-2xl transition-colors duration-300"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-center">Mobile Design</h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-center transition-colors duration-300"
+            >
+              Designing mobile experiences that are beautiful, functional, and
+              user-friendly.
+            </p>
+            <div class="mt-6 text-center">
+              <a
+                href="#"
+                class="text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center transition-colors duration-300"
+              >
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section
+      id="resume"
+      class="py-20 px-6 bg-white dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 animate-on-scroll">
+          Work <span class="text-gradient">Experience</span>
+        </h2>
+
+        <div class="max-w-3xl mx-auto relative">
+          <!-- Timeline line -->
+          <div
+            class="absolute left-4 md:left-1/2 h-full w-0.5 bg-orange-200 dark:bg-orange-600 transform -translate-x-1/2 transition-colors duration-300"
+          ></div>
+
+          <!-- Experience 1 -->
+          <div
+            class="mb-12 animate-on-scroll flex md:justify-start justify-end"
+          >
+            <div class="md:w-1/2 md:pr-12 md:text-right">
+              <div
+                class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover-glow hover-grow transition-colors duration-300"
+              >
+                <div class="flex items-center justify-end mb-2">
+                  <div
+                    class="ml-auto bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm transition-colors duration-300"
+                  >
+                    2016 - 2020
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Experienced Designer</h3>
+                <p
+                  class="text-gray-600 dark:text-gray-400 mb-2 transition-colors duration-300"
+                >
+                  Cognizant, Mumbai
+                </p>
+                <p
+                  class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                >
+                  Led design initiatives for enterprise clients, creating
+                  user-centered solutions that improved engagement metrics by
+                  40%.
+                </p>
+              </div>
+            </div>
+            <div class="hidden md:block w-1/2"></div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="mb-12 animate-on-scroll flex md:justify-end justify-end">
+            <div class="hidden md:block w-1/2"></div>
+            <div class="md:w-1/2 md:pl-12">
+              <div
+                class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover-glow hover-grow transition-colors duration-300"
+              >
+                <div class="flex items-center mb-2">
+                  <div
+                    class="bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm transition-colors duration-300"
+                  >
+                    2020 - 2023
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                <p
+                  class="text-gray-600 dark:text-gray-400 mb-2 transition-colors duration-300"
+                >
+                  Sugee Pvt Limited, Mumbai
+                </p>
+                <p
+                  class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                >
+                  Redesigned core product experiences resulting in a 25%
+                  increase in user retention and NPS score improvement.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div
+            class="mb-12 animate-on-scroll flex md:justify-start justify-end"
+          >
+            <div class="md:w-1/2 md:pr-12 md:text-right">
+              <div
+                class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover-glow hover-grow transition-colors duration-300"
+              >
+                <div class="flex items-center justify-end mb-2">
+                  <div
+                    class="ml-auto bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm transition-colors duration-300"
+                  >
+                    2023 - Present
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Lead UX Designer</h3>
+                <p
+                  class="text-gray-600 dark:text-gray-400 mb-2 transition-colors duration-300"
+                >
+                  Cinetstox, Mumbai
+                </p>
+                <p
+                  class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                >
+                  Leading a team of designers to create innovative digital media
+                  solutions for global clients.
+                </p>
+              </div>
+            </div>
+            <div class="hidden md:block w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Hire Me Section -->
+    <section
+      class="py-20 px-6 bg-orange-500 dark:bg-orange-600 text-white relative overflow-hidden parallax-bg transition-colors duration-300"
+    >
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div
+        class="floating-shape"
+        style="width: 400px; height: 400px; top: -100px; right: -100px"
+      ></div>
+      <div class="container mx-auto text-center relative z-10">
+        <h2 class="text-3xl font-bold mb-6 animate-on-scroll">
+          Why <span class="text-stroke">Hire Me?</span>
+        </h2>
+        <div
+          class="text-5xl font-bold mb-6 animate-on-scroll"
+          id="project-counter"
+        >
+          0+
+        </div>
+        <p class="text-xl mb-8 animate-on-scroll">Projects Completed</p>
+        <p class="max-w-2xl mx-auto mb-8 animate-on-scroll">
+          With a decade of experience and hundreds of successful projects, I
+          bring both expertise and creativity to every engagement.
+        </p>
+        <a
+          href="#contact"
+          class="bg-white dark:bg-gray-700 text-orange-500 dark:text-orange-400 px-8 py-3 rounded-md font-bold hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300 inline-block animate-on-scroll hover-grow magnetic-effect"
+          data-scale="1.05"
+          >Let's Work Together</a
+        >
+
+        <div class="flex justify-center space-x-12 mt-16">
+          <div class="text-center animate-on-scroll" data-delay="0.1">
+            <div class="text-3xl font-bold mb-2" id="client-counter">0</div>
+            <div class="text-sm">Happy Clients</div>
+          </div>
+          <div class="text-center animate-on-scroll" data-delay="0.2">
+            <div class="text-3xl font-bold mb-2" id="award-counter">0</div>
+            <div class="text-sm">Awards Won</div>
+          </div>
+          <div class="text-center animate-on-scroll" data-delay="0.3">
+            <div class="text-3xl font-bold mb-2" id="coffee-counter">0</div>
+            <div class="text-sm">Cups of Coffee</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section
+      id="projects"
+      class="py-20 px-6 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4 animate-on-scroll">
+          My <span class="text-gradient">Portfolio</span>
+        </h2>
+        <p
+          class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12 animate-on-scroll transition-colors duration-300"
+        >
+          Selected projects showcasing my design process and solutions.
+        </p>
+
+        <!-- Filter buttons -->
+        <div class="flex justify-center mb-12 space-x-4 animate-on-scroll">
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-orange-500 text-white"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-600 hover:bg-orange-500 dark:hover:bg-orange-400 hover:text-white transition-all duration-300"
+            data-filter="ui"
+          >
+            UI/UX
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-600 hover:bg-orange-500 dark:hover:bg-orange-400 hover:text-white transition-all duration-300"
+            data-filter="web"
+          >
+            Web
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-600 hover:bg-orange-500 dark:hover:bg-orange-400 hover:text-white transition-all duration-300"
+            data-filter="mobile"
+          >
+            Mobile
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500"
+            data-category="ui"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center relative overflow-hidden transition-colors duration-300"
+            >
+              <i
+                class="fas fa-image text-4xl text-orange-500 dark:text-orange-400 z-10 transition-colors duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-orange-500 dark:bg-orange-400 opacity-0 hover:opacity-20 transition-all duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Lirante - Food Delivery Solution
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-300"
+              >
+                Redesigned the entire user journey for a faster, more intuitive
+                food ordering experience.
+              </p>
+              <div class="flex space-x-2">
+                <span
+                  class="bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm hover-grow transition-colors duration-300"
+                  >UI/UX</span
+                >
+                <span
+                  class="bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm hover-grow transition-colors duration-300"
+                  >Mobile App</span
+                >
+              </div>
+              <a
+                href="#"
+                class="mt-4 text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center transition-colors duration-300"
+              >
+                View Case Study <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500"
+            data-category="web"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center relative overflow-hidden transition-colors duration-300"
+            >
+              <i
+                class="fas fa-image text-4xl text-orange-500 dark:text-orange-400 z-10 transition-colors duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-orange-500 dark:bg-orange-400 opacity-0 hover:opacity-20 transition-all duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Sugee: Loan Management System
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-300"
+              >
+                Simplified complex financial processes into an intuitive
+                interface for rural banking.
+              </p>
+              <div class="flex space-x-2">
+                <span
+                  class="bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm hover-grow transition-colors duration-300"
+                  >Web Design</span
+                >
+                <span
+                  class="bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm hover-grow transition-colors duration-300"
+                  >Finance</span
+                >
+              </div>
+              <a
+                href="#"
+                class="mt-4 text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center transition-colors duration-300"
+              >
+                View Case Study <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500"
+            data-category="ui"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center relative overflow-hidden transition-colors duration-300"
+            >
+              <i
+                class="fas fa-image text-4xl text-orange-500 dark:text-orange-400 z-10 transition-colors duration-300"
+              ></i>
+              <div
+                class="absolute inset-0 bg-orange-500 dark:bg-orange-400 opacity-0 hover:opacity-20 transition-all duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Cinetrade: Digital Media Solution
+              </h3>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-300"
+              >
+                Created a unified platform for content creators and distributors
+                in the media industry.
+              </p>
+              <div class="flex space-x-2">
+                <span
+                  class="bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm hover-grow transition-colors duration-300"
+                  >UI/UX</span
+                >
+                <span
+                  class="bg-orange-100 dark:bg-orange-900 text-orange-500 dark:text-orange-400 px-3 py-1 rounded-full text-sm hover-grow transition-colors duration-300"
+                  >Web App</span
+                >
+              </div>
+              <a
+                href="#"
+                class="mt-4 text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center transition-colors duration-300"
+              >
+                View Case Study <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 animate-on-scroll">
+          <a
+            href="#"
+            class="border border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-400 px-6 py-3 rounded-md hover:bg-orange-50 dark:hover:bg-orange-900 transition-all duration-300 hover:shadow-lg inline-flex items-center magnetic-effect"
+            data-scale="1.05"
+          >
+            View All Projects <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section
+      class="py-20 px-6 bg-white dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4 animate-on-scroll">
+          Client <span class="text-gradient">Testimonials</span>
+        </h2>
+        <p
+          class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12 animate-on-scroll transition-colors duration-300"
+        >
+          What my clients say about my work
+        </p>
+
+        <div class="testimonial-slider relative">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div
+              class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md hover-grow animate-on-scroll transition-colors duration-300"
+            >
+              <div
+                class="flex text-yellow-400 dark:text-yellow-300 mb-4 transition-colors duration-300"
+              >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-300"
+              >
+                "Jenny transformed our digital presence with her thoughtful
+                designs. Her attention to detail and user-centered approach
+                resulted in a 35% increase in conversions."
+              </p>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 mr-4 flex items-center justify-center transition-colors duration-300"
+                >
+                  <span
+                    class="text-orange-500 dark:text-orange-400 font-bold transition-colors duration-300"
+                    >FS</span
+                  >
+                </div>
+                <div>
+                  <h4 class="font-bold">Fawzi Sayed</h4>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                  >
+                    UI/UX Designer
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div
+              class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md hover-grow animate-on-scroll transition-colors duration-300"
+            >
+              <div
+                class="flex text-yellow-400 dark:text-yellow-300 mb-4 transition-colors duration-300"
+              >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-300"
+              >
+                "Working with Jenny was a game-changer. Her ability to
+                understand our needs and translate them into stunning designs
+                was exceptional."
+              </p>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 mr-4 flex items-center justify-center transition-colors duration-300"
+                >
+                  <span
+                    class="text-orange-500 dark:text-orange-400 font-bold transition-colors duration-300"
+                    >AR</span
+                  >
+                </div>
+                <div>
+                  <h4 class="font-bold">Anita Roy</h4>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                  >
+                    Product Manager
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div
+              class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md hover-grow animate-on-scroll transition-colors duration-300"
+            >
+              <div
+                class="flex text-yellow-400 dark:text-yellow-300 mb-4 transition-colors duration-300"
+              >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-300"
+              >
+                "Jenny's designs brought our vision to life. Her creativity and
+                professionalism made the entire process seamless."
+              </p>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 mr-4 flex items-center justify-center transition-colors duration-300"
+                >
+                  <span
+                    class="text-orange-500 dark:text-orange-400 font-bold transition-colors duration-300"
+                    >VK</span
+                  >
+                </div>
+                <div>
+                  <h4 class="font-bold">Vikram Khanna</h4>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                  >
+                    CEO, TechCorp
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-20 px-6 bg-gray-50 dark:bg-gray-800 relative overflow-hidden transition-colors duration-300"
+    >
+      <div
+        class="floating-shape"
+        style="
+          width: 200px;
+          height: 200px;
+          top: 10%;
+          left: 5%;
+          animation-delay: 0s;
+        "
+      ></div>
+      <div
+        class="floating-shape"
+        style="
+          width: 250px;
+          height: 250px;
+          bottom: 15%;
+          right: 10%;
+          animation-delay: 0.5s;
+        "
+      ></div>
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4 animate-on-scroll">
+          Get in <span class="text-gradient">Touch</span>
+        </h2>
+        <p
+          class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12 animate-on-scroll transition-colors duration-300"
+        >
+          Let's create something extraordinary together. Reach out to discuss
+          your project!
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2 animate-on-scroll">
+            <div
+              class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md hover-grow transition-colors duration-300"
+            >
+              <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <i
+                    class="fas fa-envelope text-orange-500 dark:text-orange-400 mr-4 transition-colors duration-300"
+                  ></i>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                  >
+                    jenny@portfolio.com
+                  </p>
+                </div>
+                <div class="flex items-center">
+                  <i
+                    class="fas fa-phone text-orange-500 dark:text-orange-400 mr-4 transition-colors duration-300"
+                  ></i>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                  >
+                    +91 987-654-3210
+                  </p>
+                </div>
+                <div class="flex items-center">
+                  <i
+                    class="fas fa-map-marker-alt text-orange-500 dark:text-orange-400 mr-4 transition-colors duration-300"
+                  ></i>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                  >
+                    Mumbai, India
+                  </p>
+                </div>
+              </div>
+              <div class="mt-6 flex space-x-4">
+                <a
+                  href="#"
+                  class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300"
+                  ><i class="fab fa-linkedin text-2xl"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300"
+                  ><i class="fab fa-dribbble text-2xl"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300"
+                  ><i class="fab fa-behance text-2xl"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 animate-on-scroll">
+            <div
+              class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md hover-grow transition-colors duration-300"
+            >
+              <h3 class="text-xl font-bold mb-4">Send a Message</h3>
+              <div class="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                />
+                <textarea
+                  placeholder="Your Message"
+                  rows="5"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                ></textarea>
+                <button
+                  class="bg-orange-500 dark:bg-orange-400 text-white px-6 py-3 rounded-md hover:bg-orange-600 dark:hover:bg-orange-300 transition-all duration-300 hover:shadow-lg w-full magnetic-effect"
+                  data-scale="1.05"
+                >
+                  Send Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="py-10 px-6 bg-gray-800 dark:bg-gray-900 text-white text-center transition-colors duration-300"
+    >
+      <div class="container mx-auto">
+        <p class="mb-4">
+          © 2025 Jenny | Product Designer. All Rights Reserved.
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a
+            href="#"
+            class="hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300"
+            ><i class="fab fa-linkedin text-xl"></i
+          ></a>
+          <a
+            href="#"
+            class="hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300"
+            ><i class="fab fa-dribbble text-xl"></i
+          ></a>
+          <a
+            href="#"
+            class="hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-300"
+            ><i class="fab fa-behance text-xl"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
