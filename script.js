@@ -182,10 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    animateCounter(document.getElementById('project-counter'), 450, '+');
-    animateCounter(document.getElementById('client-counter'), 100);
-    animateCounter(document.getElementById('award-counter'), 25);
-    animateCounter(document.getElementById('coffee-counter'), 1000);
+    animateCounter(document.getElementById('project-counter'), 10, '+');
+    animateCounter(document.getElementById('client-counter'), 1);
+    animateCounter(document.getElementById('award-counter'), 3);
+    animateCounter(document.getElementById('coffee-counter'), 100);
 
     // ========== PORTFOLIO FILTER ==========
     const filterButtons = document.querySelectorAll('.filter-btn');
