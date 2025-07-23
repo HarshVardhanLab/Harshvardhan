@@ -12,7 +12,248 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Light mode (default) */
+body.light {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+body.light .bg-white {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+body.light .bg-gray-50 {
+  background-color: #f9fafb;
+  transition: background-color 0.3s ease;
+}
+body.light .bg-gray-800 {
+  background-color: #1f2937;
+  transition: background-color 0.3s ease;
+}
+body.light .bg-orange-100 {
+  background-color: #fff7ed;
+  transition: background-color 0.3s ease;
+}
+body.light .bg-orange-200 {
+  background-color: #ffedd5;
+  transition: background-color 0.3s ease;
+}
+body.light .text-gray-600 {
+  color: #4b5563;
+  transition: color 0.3s ease;
+}
+body.light .bg-gray-200 {
+  background-color: #e5e7eb;
+  transition: background-color 0.3s ease;
+}
+body.light .text-orange-500 {
+  color: #f97316;
+  transition: color 0.3s ease;
+}
+body.light .bg-orange-500 {
+  background-color: #f97316;
+  transition: background-color 0.3s ease;
+}
+body.light .hover\\:bg-orange-600:hover {
+  background-color: #ea580c;
+  transition: background-color 0.3s ease;
+}
+body.light .text-yellow-400 {
+  color: #facc15;
+  transition: color 0.3s ease;
+}
+body.light .border-orange-500 {
+  border-color: #f97316;
+  transition: border-color 0.3s ease;
+}
+body.light .hover\\:bg-orange-50:hover {
+  background-color: #fff7ed;
+  transition: background-color 0.3s ease;
+}
+body.light .bg-orange-50 {
+  background-color: #fff7ed;
+  transition: background-color 0.3s ease;
+}
+body.light .text-gradient {
+  background: linear-gradient(90deg, #ff7b00, #ffaa00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background 0.3s ease;
+}
+body.light .text-stroke {
+  -webkit-text-stroke: 1px #ff7b00;
+  color: transparent;
+  transition: -webkit-text-stroke-color 0.3s ease;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+body.dark .bg-white {
+  background-color: #2d3748;
+  transition: background-color 0.3s ease;
+}
+body.dark .bg-gray-50 {
+  background-color: #2d3748;
+  transition: background-color 0.3s ease;
+}
+body.dark .bg-gray-800 {
+  background-color: #1a202c;
+  transition: background-color 0.3s ease;
+}
+body.dark .bg-orange-100 {
+  background-color: #4a3c31;
+  transition: background-color 0.3s ease;
+}
+body.dark .bg-orange-200 {
+  background-color: #5a4738;
+  transition: background-color 0.3s ease;
+}
+body.dark .text-gray-600 {
+  color: #a0aec0;
+  transition: color 0.3s ease;
+}
+body.dark .bg-gray-200 {
+  background-color: #4a5568;
+  transition: background-color 0.3s ease;
+}
+body.dark .text-orange-500 {
+  color: #ed8936;
+  transition: color 0.3s ease;
+}
+body.dark .bg-orange-500 {
+  background-color: #ed8936;
+  transition: background-color 0.3s ease;
+}
+body.dark .hover\\:bg-orange-600:hover {
+  background-color: #dd6b20;
+  transition: background-color 0.3s ease;
+}
+body.dark .text-yellow-400 {
+  color: #ecc94b;
+  transition: color 0.3s ease;
+}
+body.dark .border-orange-500 {
+  border-color: #ed8936;
+  transition: border-color 0.3s ease;
+}
+body.dark .hover\\:bg-orange-50:hover {
+  background-color: #4a3c31;
+  transition: background-color 0.3s ease;
+}
+body.dark .bg-orange-50 {
+  background-color: #4a3c31;
+  transition: background-color 0.3s ease;
+}
+body.dark .text-gradient {
+  background: linear-gradient(90deg, #ed8936, #f6ad55);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background 0.3s ease;
+}
+body.dark .text-stroke {
+  -webkit-text-stroke: 1px #ed8936;
+  color: transparent;
+  transition: -webkit-text-stroke-color 0.3s ease;
+}
+
+.project-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  perspective: 1000px;
+}
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.3;
+}
+.floating-shape {
+  position: absolute;
+  background: rgba(255, 123, 0, 0.2);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+  animation: float 8s ease-in-out infinite;
+  transition: background 0.3s ease;
+}
+body.dark .floating-shape {
+  background: rgba(237, 137, 54, 0.2);
+  transition: background 0.3s ease;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+.glow-effect {
+  box-shadow: 0 0 15px rgba(255, 123, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+body.dark .glow-effect {
+  box-shadow: 0 0 15px rgba(237, 137, 54, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+.glow-effect:hover {
+  box-shadow: 0 0 25px rgba(255, 123, 0, 0.8);
+}
+body.dark .glow-effect:hover {
+  box-shadow: 0 0 25px rgba(237, 137, 54, 0.8);
+}
+.hover-grow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-grow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.nav-link {
+  transition: color 0.3s ease;
+}
+.service-card:hover .service-icon {
+  transform: rotateY(180deg) scale(1.1);
+}
+.service-icon {
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-color 0.3s ease;
+}
+.magnetic-effect {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.magnetic-effect:hover {
+  transform: translate(var(--tx, 0), var(--ty, 0)) scale(var(--scale, 1.1));
+}
+.dark-mode-toggle {
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.dark-mode-toggle:hover {
+  transform: scale(1.2);
+}
+</style>
   </head>
   <body class="font-sans light text-gray-800 overflow-x-hidden">
     <!-- Navigation -->
@@ -279,7 +520,7 @@
               class="w-64 h-64 md:w-80 md:h-80 bg-orange-100 dark:bg-orange-900 rounded-full overflow-hidden shadow-xl transition-colors duration-300 border-[4px] border-orange-300 shadow-orange-400 dark:shadow-orange-800"
             >
               <img
-                src="{{ url_for('static', filename='assets/harshvardhan.jpeg') }}"
+                src="../assets/harshvardhan.jpeg"
                 alt="Profile"
                 class="w-full h-full object-cover transition-all duration-300"
               />
@@ -1204,6 +1445,279 @@
       </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // ========== THREE.JS HERO BACKGROUND ==========
+    const canvas = document.querySelector('.hero-canvas');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    const particleCount = 1000;
+    const particlesGeometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount * 3; i += 3) {
+        positions[i] = (Math.random() - 0.5) * 100;
+        positions[i + 1] = (Math.random() - 0.5) * 100;
+        positions[i + 2] = (Math.random() - 0.5) * 100;
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const particleMaterial = new THREE.PointsMaterial({
+        size: 0.5,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.6
+    });
+
+    const particles = new THREE.Points(particlesGeometry, particleMaterial);
+    scene.add(particles);
+    camera.position.z = 50;
+
+    const animate = () => {
+        requestAnimationFrame(animate);
+        particles.rotation.y += 0.001;
+        particles.rotation.x += 0.0005;
+        renderer.render(scene, camera);
+    };
+    animate();
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // ========== DARK MODE LOGIC ==========
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const mobileDarkModeToggle = document.getElementById('mobile-dark-mode-toggle');
+    const body = document.body;
+
+    const updateParticleColors = () => {
+        const isDark = body.classList.contains('dark');
+        for (let i = 0; i < particleCount * 3; i += 3) {
+            colors[i] = isDark ? 0.93 : 1.0; // #ed8936 for dark, #ff7b00 for light
+            colors[i + 1] = isDark ? 0.54 : 0.48;
+            colors[i + 2] = isDark ? 0.21 : 0.0;
+        }
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        particlesGeometry.attributes.color.needsUpdate = true;
+    };
+
+    const updateToggleIcon = () => {
+        const isDark = body.classList.contains('dark');
+        const newIcon = isDark ? 'fa-sun' : 'fa-moon';
+        const oldIcon = isDark ? 'fa-moon' : 'fa-sun';
+        [darkModeToggle, mobileDarkModeToggle].forEach(toggle => {
+            if (toggle) {
+                const icon = toggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove(oldIcon);
+                    icon.classList.add(newIcon);
+                }
+            }
+        });
+    };
+
+    const applyTheme = (theme) => {
+        body.classList.remove('light', 'dark');
+        body.classList.add(theme);
+        localStorage.setItem('theme', theme);
+        updateParticleColors();
+        updateToggleIcon();
+    };
+
+    // Load Theme on Start
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+    }
+
+    // Toggle Handler
+    const toggleTheme = () => {
+        const current = body.classList.contains('dark') ? 'light' : 'dark';
+        applyTheme(current);
+    };
+
+    [darkModeToggle, mobileDarkModeToggle].forEach(btn => {
+        if (btn) btn.addEventListener('click', toggleTheme);
+    });
+
+    // ========== MOBILE MENU ==========
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                }
+            }
+        });
+    });
+
+    // ========== GSAP SCROLL ANIMATIONS ==========
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.animate-on-scroll').forEach((el, i) => {
+        gsap.from(el, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: el.dataset.delay || i * 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: el,
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    gsap.utils.toArray('.skill-progress').forEach(bar => {
+        gsap.to(bar, {
+            width: bar.dataset.width,
+            duration: 1.5,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: bar,
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+
+    // ========== COUNTER ANIMATION ==========
+    const animateCounter = (el, end, suffix = '') => {
+        gsap.to(el, {
+            innerText: end,
+            duration: 2,
+            snap: { innerText: 1 },
+            ease: 'power1.out',
+            scrollTrigger: {
+                trigger: el,
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            },
+            onUpdate: function () {
+                el.innerText = Math.ceil(this.targets()[0].innerText) + suffix;
+            }
+        });
+    };
+
+    animateCounter(document.getElementById('project-counter'), 10, '+');
+    animateCounter(document.getElementById('client-counter'), 100);
+    animateCounter(document.getElementById('award-counter'), 25);
+    animateCounter(document.getElementById('coffee-counter'), 1000);
+
+    // ========== PORTFOLIO FILTER ==========
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove('bg-orange-500', 'text-white');
+                btn.classList.add('bg-gray-200', 'dark:bg-gray-600', 'hover:bg-orange-500', 'dark:hover:bg-orange-400', 'hover:text-white');
+            });
+
+            button.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'hover:bg-orange-500', 'dark:hover:bg-orange-400', 'hover:text-white');
+            button.classList.add('bg-orange-500', 'text-white');
+
+            projectCards.forEach(card => {
+                const isVisible = filter === 'all' || card.dataset.category === filter;
+                gsap.to(card, {
+                    opacity: isVisible ? 1 : 0,
+                    scale: isVisible ? 1 : 0.8,
+                    duration: 0.5,
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        card.style.display = isVisible ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+    });
+
+    // ========== MAGNETIC HOVER ==========
+    gsap.utils.toArray('.magnetic-effect').forEach(el => {
+        el.addEventListener('mousemove', e => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const moveX = (e.clientX - centerX) * 0.2;
+            const moveY = (e.clientY - centerY) * 0.2;
+            gsap.to(el, {
+                '--tx': `${moveX}px`,
+                '--ty': `${moveY}px`,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        el.addEventListener('mouseleave', () => {
+            gsap.to(el, {
+                '--tx': '0px',
+                '--ty': '0px',
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
+
+    // ========== PROJECT CARD 3D HOVER ==========
+    gsap.utils.toArray('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const rotateX = (e.clientY - centerY) * -0.05;
+            const rotateY = (e.clientX - centerX) * 0.05;
+            gsap.to(card, {
+                rotationX: rotateX,
+                rotationY: rotateY,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotationX: 0,
+                rotationY: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
+});
+</script>
   </body>
 </html>
