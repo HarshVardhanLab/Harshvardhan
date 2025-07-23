@@ -1435,21 +1435,25 @@
               <h3 class="text-xl font-bold mb-4">Send a Message</h3>
               <div class="space-y-4">
                 <input
+                  id="name"
                   type="text"
                   placeholder="Your Name"
                   class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
                 />
                 <input
+                  id="email"
                   type="email"
                   placeholder="Your Email"
                   class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
                 />
                 <textarea
+                  id="message"
                   placeholder="Your Message"
                   rows="5"
                   class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
                 ></textarea>
                 <button
+                  onclick="sendMessage()"
                   class="bg-orange-500 dark:bg-orange-400 text-white px-6 py-3 rounded-md hover:bg-orange-600 dark:hover:bg-orange-300 transition-all duration-300 hover:shadow-lg w-full magnetic-effect"
                   data-scale="1.05"
                 >
@@ -1491,6 +1495,36 @@
     </footer>
 
     <script>
+      async function sendMessage() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+          alert("Please fill out all fields.");
+          return;
+        }
+
+        const response = await fetch(
+          "http://127.0.0.1:5000/messages?password=1234",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message }),
+          }
+        );
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert("Message sent successfully!");
+        } else {
+          alert("Failed to send message: " + result.error);
+        }
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         // ========== THREE.JS HERO BACKGROUND ==========
         const canvas = document.querySelector(".hero-canvas");
