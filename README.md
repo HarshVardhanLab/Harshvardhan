@@ -26,7 +26,7 @@ It showcases my skills, projects, and experience in a modern, responsive design 
 
 | Home Page | Projects Section |
 |----------|------------------|
-| ![Home](screenshots/home.png) | ![Projects](screenshots/projects.png) |
+| ![Home](./static/assets/homepage.png) | ![Projects](./static/assets/Project.png) |
 
 *(Optional: Add your screenshots inside a `screenshots/` folder)*
 
