@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Error - Harsh Vardhan Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #ff7b00, #ffaa00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .floating-shape {
+            position: absolute;
+            background: rgba(255, 123, 0, 0.2);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -1;
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+        }
+    </style>
+</head>
+<body class="font-sans light text-gray-800 overflow-x-hidden min-h-screen bg-gray-50 dark:bg-gray-800">
+    <!-- Floating shapes -->
+    <div class="floating-shape" style="width: 200px; height: 200px; top: 20%; left: 10%; animation-delay: 0s;"></div>
+    <div class="floating-shape" style="width: 300px; height: 300px; bottom: 10%; right: 15%; animation-delay: 0.5s;"></div>
+    
+    <div class="container mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-screen">
+        <div class="text-center max-w-2xl mx-auto">
+            <!-- 500 Icon -->
+            <div class="mb-8">
+                <i class="fas fa-server text-8xl text-orange-500 dark:text-orange-400 mb-4"></i>
+            </div>
+            
+            <!-- Error Message -->
+            <h1 class="text-6xl font-bold mb-4">
+                <span class="text-gradient">500</span>
+            </h1>
+            <h2 class="text-2xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
+                Server Error
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8 text-lg">
+                Something went wrong on our end. Don't worry, I'm working to fix this issue. 
+                Please try again in a few moments.
+            </p>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="location.reload()" class="bg-orange-500 dark:bg-orange-400 text-white px-8 py-3 rounded-md hover:bg-orange-600 dark:hover:bg-orange-300 transition-all duration-300 hover:shadow-lg inline-flex items-center">
+                    <i class="fas fa-redo mr-2"></i>
+                    Try Again
+                </button>
+                <a href="/" class="border border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-400 px-8 py-3 rounded-md hover:bg-orange-50 dark:hover:bg-orange-900 transition-all duration-300 hover:shadow-lg inline-flex items-center">
+                    <i class="fas fa-home mr-2"></i>
+                    Go Home
+                </a>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="mt-12 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                <h3 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">
+                    Still having issues?
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    If this problem persists, please contact me directly:
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:harshvardhan02102002@gmail.com" class="text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        harshvardhan02102002@gmail.com
+                    </a>
+                    <a href="https://wa.me/+919528693084" class="text-orange-500 dark:text-orange-400 hover:underline inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Dark mode toggle functionality
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+            document.body.classList.add('dark');
+        }
+    </script>
+</body>
+</html> 
