@@ -3,15 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harshvardhan -Software Developer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <title>Harshvardhan - Software Developer Portfolio | Python, AI, Cybersecurity</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Harsh Vardhan - Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies. View portfolio projects and get in touch for collaboration." />
+    <meta name="keywords" content="software developer, python developer, AI/ML, cybersecurity, cloud computing, web development, portfolio" />
+    <meta name="author" content="Harsh Vardhan" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Harsh Vardhan - Software Developer Portfolio" />
+    <meta property="og:description" content="Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies. View portfolio projects and get in touch." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://harshvardhan-mu.vercel.app" />
+    <meta property="og:image" content="https://harshvardhan-mu.vercel.app/static/assets/harshvardhan.jpeg" />
+    <meta property="og:site_name" content="Harsh Vardhan Portfolio" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Harsh Vardhan - Software Developer Portfolio" />
+    <meta name="twitter:description" content="Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies." />
+    <meta name="twitter:image" content="https://harshvardhan-mu.vercel.app/static/assets/harshvardhan.jpeg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/apple-touch-icon.png" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+    
+    <!-- Performance Optimized CDN Links -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/static/manifest.json" />
+    <meta name="theme-color" content="#f97316" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Harsh Vardhan",
+      "jobTitle": "Software Developer",
+      "description": "Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies",
+      "url": "https://harshvardhan-mu.vercel.app",
+      "image": "https://harshvardhan-mu.vercel.app/static/assets/harshvardhan.jpeg",
+      "sameAs": [
+        "https://github.com/HarshVardhanLab",
+        "https://linkedin.com/in/harsh-vardhan-285122235",
+        "https://discord.com/users/1385134642004361337"
+      ],
+      "knowsAbout": ["Python", "AI/ML", "Cybersecurity", "Cloud Computing", "Web Development"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Nova Coders Community"
+      }
+    }
+    </script>
     <style>
       body {
         scroll-behavior: smooth;
@@ -255,9 +309,172 @@
       .dark-mode-toggle:hover {
         transform: scale(1.2);
       }
+      
+      /* Enhanced Accessibility */
+      .focus-visible:focus {
+        outline: 2px solid #f97316;
+        outline-offset: 2px;
+      }
+      
+      /* Enhanced Mobile Touch Interactions */
+      @media (max-width: 768px) {
+        .nav-link {
+          padding: 12px 16px;
+          min-height: 44px;
+          display: flex;
+          align-items: center;
+        }
+        
+        .project-card {
+          margin-bottom: 20px;
+        }
+        
+        .floating-shape {
+          display: none;
+        }
+      }
+      
+      /* Lazy Loading for Images */
+      .lazy-image {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      
+      .lazy-image.loaded {
+        opacity: 1;
+      }
+      
+      /* Enhanced Typing Animation */
+      .typing-animation {
+        overflow: hidden;
+        border-right: 2px solid #f97316;
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+      
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #f97316; }
+      }
+      
+      /* Enhanced 3D Card Effects */
+      .project-card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      
+      .project-card-3d:hover {
+        transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+      }
+      
+      /* Floating Action Button */
+      .fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #f97316, #ea580c);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        cursor: pointer;
+      }
+      
+      .fab:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6);
+      }
+      
+      /* Enhanced Skill Bars */
+      .skill-bar {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .skill-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        animation: shimmer 2s infinite;
+      }
+      
+      @keyframes shimmer {
+        0% { left: -100%; }
+        100% { left: 100%; }
+      }
+      
+      /* Enhanced Form Validation */
+      .form-input:invalid {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+      }
+      
+      .form-input:valid {
+        border-color: #10b981;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+      }
+      
+      /* Loading Animation */
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f4f6;
+        border-top: 4px solid #f97316;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Enhanced Scroll Indicator */
+      .scroll-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #e5e7eb;
+        z-index: 9999;
+      }
+      
+      .scroll-progress {
+        height: 100%;
+        background: linear-gradient(90deg, #f97316, #ea580c);
+        width: 0%;
+        transition: width 0.1s ease;
+      }
     </style>
   </head>
   <body class="font-sans light text-gray-800 overflow-x-hidden">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-progress" id="scroll-progress"></div>
+    </div>
+    
+    <!-- Floating Action Button -->
+    <div class="fab" id="fab" aria-label="Quick Contact">
+      <i class="fas fa-comments"></i>
+    </div>
+    
     <!-- Navigation -->
     <header
       class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50 backdrop-blur-sm bg-opacity-90 transition-colors duration-300"
@@ -444,9 +661,9 @@
       >
         <div class="md:w-1/2 mb-10 md:mb-0 animate-on-scroll">
           <h1 class="text-4xl md:text-6xl font-bold mb-4">
-            Hi, I’m <span class="text-gradient">Harsh Vardhan</span>
+            Hi, I'm <span class="text-gradient typing-animation" id="typing-text">Harsh Vardhan</span>
           </h1>
-          <h2 class="text-2xl md:text-3xl mb-6">
+          <h2 class="text-2xl md:text-3xl mb-6" id="role-text">
             Software Engineer | Ethical Hacker | Tech Innovator
           </h2>
           <div class="flex items-center mb-6">
@@ -499,7 +716,7 @@
             class="text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-300"
           >
             I craft powerful, scalable, and user-centric digital solutions —
-            from web apps to AI assistants. Let’s turn your vision into reality.
+            from web apps to AI assistants. Let's turn your vision into reality.
           </p>
           <div class="flex space-x-4">
             <a
@@ -574,7 +791,7 @@
             <p
               class="text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-300"
             >
-              I’m a <strong>Software Developer</strong> driven by curiosity,
+              I'm a <strong>Software Developer</strong> driven by curiosity,
               creativity, and clean code. From building
               <strong>AI tools</strong> and dynamic web apps to organizing tech
               events like <strong>Hack Gear 1.0</strong>, I enjoy turning ideas
@@ -655,7 +872,7 @@
                       >
                     </div>
                     <div
-                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300 skill-bar"
                     >
                       <div
                         class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
@@ -673,7 +890,7 @@
                       >
                     </div>
                     <div
-                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300 skill-bar"
                     >
                       <div
                         class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
@@ -691,7 +908,7 @@
                       >
                     </div>
                     <div
-                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300 skill-bar"
                     >
                       <div
                         class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
@@ -709,7 +926,7 @@
                       >
                     </div>
                     <div
-                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300"
+                      class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 transition-colors duration-300 skill-bar"
                     >
                       <div
                         class="bg-orange-500 dark:bg-orange-400 h-2 rounded-full skill-progress transition-colors duration-300"
@@ -978,7 +1195,7 @@
         <p class="text-xl mb-8 animate-on-scroll">Projects & Prototypes</p>
         <p class="max-w-2xl mx-auto mb-8 animate-on-scroll">
           As a final-year B.Tech student with a strong background in Python,
-          cybersecurity, automation, and cloud technologies like Azure — I’ve
+          cybersecurity, automation, and cloud technologies like Azure — I've
           built real-world projects, contributed to open-source, and worked with
           clients in academic and freelance settings. I learn fast, build smart,
           and aim for impact.
@@ -1052,14 +1269,15 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="main-projects">
           <!-- Project 1 -->
           <div
-            class="bg-gray-50 dark:bg-gray-800 border border-orange-100 dark:border-orange-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:shadow-orange-300 dark:hover:shadow-orange-600 overflow-hidden transition-all duration-500"
+            class="bg-gray-50 dark:bg-gray-800 border border-orange-100 dark:border-orange-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:shadow-orange-300 dark:hover:shadow-orange-600 overflow-hidden transition-all duration-500 project-card-3d"
             data-category="ui"
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
                 src="../static/assets/shivpng.png"
                 alt="Shiv Kumar Mehandi Arts"
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
+                loading="lazy"
               />
             </div>
             <div class="p-6">
@@ -1091,14 +1309,15 @@
 
           <!-- Project 2 -->
           <div
-            class="bg-gray-50 dark:bg-gray-800 border border-orange-100 dark:border-orange-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:shadow-orange-300 dark:hover:shadow-orange-600 overflow-hidden transition-all duration-500"
+            class="bg-gray-50 dark:bg-gray-800 border border-orange-100 dark:border-orange-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:shadow-orange-300 dark:hover:shadow-orange-600 overflow-hidden transition-all duration-500 project-card-3d"
             data-category="web"
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
                 src="../static/assets/hackgear.png"
                 alt="Hack Gear 1.0"
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
+                loading="lazy"
               />
             </div>
             <div class="p-6">
@@ -1133,14 +1352,15 @@
 
           <!-- Project 3 -->
           <div
-            class="bg-gray-50 dark:bg-gray-800 border border-orange-100 dark:border-orange-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:shadow-orange-300 dark:hover:shadow-orange-600 overflow-hidden transition-all duration-500"
+            class="bg-gray-50 dark:bg-gray-800 border border-orange-100 dark:border-orange-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:shadow-orange-300 dark:hover:shadow-orange-600 overflow-hidden transition-all duration-500 project-card-3d"
             data-category="ui"
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
                 src="../static/assets/Mail-Notifier.png"
                 alt="Mail Notifier"
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
+                loading="lazy"
               />
             </div>
             <div class="p-6">
@@ -1302,6 +1522,7 @@
     </section>
 
     <script>
+      // Enhanced Project Toggle
       const toggleBtn = document.getElementById("toggle-projects-btn");
       const extraProjects = document.getElementById("extra-projects");
       let isVisible = false;
@@ -1314,6 +1535,61 @@
           ? 'Show Less <i class="fas fa-arrow-up ml-2"></i>'
           : 'View All Projects <i class="fas fa-arrow-down ml-2"></i>';
       });
+
+      // Lazy Loading for Images
+      const lazyImages = document.querySelectorAll('.lazy-image');
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.classList.add('loaded');
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      lazyImages.forEach(img => imageObserver.observe(img));
+
+      // Scroll Progress Indicator
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.offsetHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+      });
+
+      // Floating Action Button
+      const fab = document.getElementById('fab');
+      fab.addEventListener('click', () => {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Enhanced Form Validation
+      const formInputs = document.querySelectorAll('.form-input');
+      formInputs.forEach(input => {
+        input.addEventListener('blur', () => {
+          if (input.checkValidity()) {
+            input.classList.add('valid');
+            input.classList.remove('invalid');
+          } else {
+            input.classList.add('invalid');
+            input.classList.remove('valid');
+          }
+        });
+      });
+
+      // Register Service Worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/static/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
     </script>
 
     <!-- Testimonials Section -->
@@ -1558,19 +1834,25 @@
                   id="name"
                   type="text"
                   placeholder="Your Name"
-                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                  required
+                  aria-label="Your Name"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300 form-input"
                 />
                 <input
                   id="email"
                   type="email"
                   placeholder="Your Email"
-                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                  required
+                  aria-label="Your Email"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300 form-input"
                 />
                 <textarea
                   id="message"
                   placeholder="Your Message"
                   rows="5"
-                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                  required
+                  aria-label="Your Message"
+                  class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-300 form-input"
                 ></textarea>
                 <button
                   onclick="sendMessage()"
@@ -1758,6 +2040,28 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
+        // ========== TYPING ANIMATION ==========
+        const typingText = document.getElementById('typing-text');
+        const roleText = document.getElementById('role-text');
+        
+        const typeWriter = (element, text, speed = 100) => {
+          let i = 0;
+          element.innerHTML = '';
+          const timer = setInterval(() => {
+            if (i < text.length) {
+              element.innerHTML += text.charAt(i);
+              i++;
+            } else {
+              clearInterval(timer);
+            }
+          }, speed);
+        };
+
+        // Start typing animation after a delay
+        setTimeout(() => {
+          typeWriter(typingText, 'Harsh Vardhan', 150);
+        }, 1000);
+
         // ========== THREE.JS HERO BACKGROUND ==========
         const canvas = document.querySelector(".hero-canvas");
         const scene = new THREE.Scene();
@@ -2034,6 +2338,47 @@
               ease: "power2.out",
             });
           });
+        });
+
+        // ========== ENHANCED KEYBOARD NAVIGATION ==========
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            // Close mobile menu if open
+            const pythonMenu = document.getElementById("python-menu");
+            if (!pythonMenu.classList.contains("hidden")) {
+              pythonMenu.classList.add("hidden");
+              document.getElementById("python-menu-button").querySelector("i").classList.replace("fa-times", "fa-bars");
+            }
+          }
+        });
+
+        // ========== ENHANCED ACCESSIBILITY ==========
+        // Add focus indicators for all interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, input, textarea, [tabindex]');
+        interactiveElements.forEach(el => {
+          el.addEventListener('focus', () => {
+            el.classList.add('focus-visible');
+          });
+          el.addEventListener('blur', () => {
+            el.classList.remove('focus-visible');
+          });
+        });
+
+        // ========== PERFORMANCE OPTIMIZATION ==========
+        // Debounce scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            // Update scroll progress
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar) {
+              progressBar.style.width = scrollPercent + '%';
+            }
+          }, 10);
         });
 
         // ========== PROJECT CARD 3D HOVER ==========
