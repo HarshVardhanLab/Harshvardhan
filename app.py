@@ -372,7 +372,7 @@ if app.debug:
             'app_name': 'Harsh Vardhan Portfolio',
             'environment': app.config.get('ENV', 'development'),
             'debug': app.debug,
-            'cache_type': cache_config['CACHE_TYPE'],
+            'cache_type': config.CACHE_TYPE,  # <-- FIXED HERE
             'rate_limiting': True
         })
 

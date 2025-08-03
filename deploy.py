@@ -9,6 +9,7 @@ import subprocess
 import requests
 import time
 from pathlib import Path
+from app import app  # <-- Add this import at the top, after other imports
 
 def run_command(command, description=""):
     """Run a command and handle errors"""
@@ -138,4 +139,4 @@ def main():
     start_server()
 
 if __name__ == "__main__":
-    main() 
+    main()
