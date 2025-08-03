@@ -72,11 +72,6 @@
       }
     }
   ],
-  "functions": {
-    "app.py": {
-      "maxDuration": 30
-    }
-  },
   "env": {
     "FLASK_ENV": "production",
     "PYTHONPATH": "."
