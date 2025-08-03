@@ -16,6 +16,8 @@ A modern, feature-rich portfolio website built with **Flask (Python)**, showcasi
 
 ### ✅ Backend Features
 - **Flask API** - RESTful API endpoints for contact form and analytics
+- **SQLite Database** - Store and manage contact form messages locally
+- **Admin Dashboard** - Secure admin panel to view and manage messages
 - **Rate Limiting** - Protection against spam and abuse
 - **Caching** - Performance optimization with intelligent caching
 - **Security Headers** - Comprehensive security with CSP, HSTS, etc.
@@ -38,10 +40,16 @@ A modern, feature-rich portfolio website built with **Flask (Python)**, showcasi
 My Portfolio/
 ├── app.py                 # Main Flask application
 ├── config.py             # Configuration management
+├── database_sqlite.py    # SQLite database operations
+├── setup_sqlite.py       # SQLite setup script
+├── test_sqlite.py        # SQLite test script
 ├── deploy.py             # Deployment script
 ├── requirements.txt      # Python dependencies
+├── portfolio.db          # SQLite database file
 ├── templates/
 │   ├── index.html       # Main portfolio page
+│   ├── admin_login.html # Admin login page
+│   ├── admin_dashboard.html # Admin dashboard
 │   ├── 404.html         # Custom 404 error page
 │   └── 500.html         # Custom 500 error page
 ├── static/
@@ -56,6 +64,7 @@ My Portfolio/
 
 - **Frontend:** HTML5, CSS3, JavaScript, Tailwind CSS, GSAP
 - **Backend:** Python (Flask), Flask-Caching, Flask-Limiter
+- **Database:** SQLite (local file-based)
 - **Performance:** Lazy loading, CDN, caching, compression
 - **Security:** Rate limiting, security headers, input validation
 - **Deployment:** Vercel, Render, PythonAnywhere ready
@@ -75,15 +84,26 @@ My Portfolio/
    pip install -r requirements.txt
    ```
 
-3. **Run the development server**
+3. **Set up SQLite Database** (Optional - for admin features)
+   ```bash
+   # Run the setup script
+   python setup_sqlite.py
+   
+   # Or set environment variables manually
+   export SQLITE_DB_PATH="portfolio.db"
+   export ADMIN_PASSWORD="your_secure_password"
+   ```
+
+4. **Run the development server**
    ```bash
    python deploy.py
    # or
    python app.py
    ```
 
-4. **Access the application**
+5. **Access the application**
    - Main site: http://localhost:5000
+   - Admin panel: http://localhost:5000/admin
    - API docs: http://localhost:5000/api/docs
    - Health check: http://localhost:5000/health
 
@@ -127,6 +147,21 @@ GET /api/analytics
 GET /health
 ```
 
+### Admin Dashboard
+```http
+GET /admin
+POST /admin/login
+GET /admin/logout
+```
+
+### Admin API Endpoints
+```http
+GET /api/admin/messages
+POST /api/admin/messages/{id}/read
+DELETE /api/admin/messages/{id}
+GET /api/admin/stats
+```
+
 ### API Documentation
 ```http
 GET /api/docs
@@ -147,6 +182,16 @@ GET /api/docs
 - **CDN Integration** - Optimized external resources
 - **Compression** - Gzip compression for faster loading
 - **Minification** - Optimized CSS and JavaScript
+
+## 🔐 Admin Features
+
+- **Secure Login** - Password-protected admin access
+- **Message Management** - View, mark as read, and delete messages
+- **Real-time Updates** - Auto-refresh messages every 30 seconds
+- **Message Statistics** - Track total, read, and unread messages
+- **Responsive Dashboard** - Mobile-friendly admin interface
+- **Message Details** - View full message content in modal
+- **Bulk Operations** - Efficient message management
 
 ## 🎨 UI/UX Features
 
@@ -184,6 +229,10 @@ SECRET_KEY=your-secure-secret-key
 FLASK_ENV=production
 SECRET_KEY=your-secure-secret-key
 PORT=5000
+
+# SQLite Configuration (for admin features)
+SQLITE_DB_PATH=portfolio.db
+ADMIN_PASSWORD=your_secure_admin_password
 ```
 
 ### Supported Platforms

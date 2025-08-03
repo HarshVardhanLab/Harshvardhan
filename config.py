@@ -5,6 +5,13 @@ class Config:
     """Base configuration class"""
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'your-secret-key-change-in-production'
     
+    # SQLite configuration
+    SQLITE_DB_PATH = os.environ.get('SQLITE_DB_PATH') or 'portfolio.db'
+    
+    # Admin settings
+    ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD') or 'admin123'
+    ADMIN_SESSION_TIMEOUT = 3600  # 1 hour
+    
     # Cache configuration
     CACHE_TYPE = 'simple'
     CACHE_DEFAULT_TIMEOUT = 300
