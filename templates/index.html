@@ -27,7 +27,7 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/manifest.json" />
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
@@ -775,7 +775,7 @@
               class="w-64 h-64 md:w-80 md:h-80 bg-orange-100 dark:bg-orange-900 rounded-full overflow-hidden shadow-xl transition-colors duration-300 border-[4px] border-orange-300 shadow-orange-400 dark:shadow-orange-800"
             >
               <img
-                src="../static/assets/harshvardhan.jpeg"
+                src="/static/assets/harshvardhan.jpeg"
                 alt="Profile"
                 class="w-full h-full object-cover transition-all duration-300"
               />
@@ -884,7 +884,7 @@
             </div>
 
             <a
-              href="assets/HarshVardhan_CV.pdf"
+              href="/static/assets/HarshVardhan_CV.pdf"
               download
               class="bg-orange-500 dark:bg-orange-400 text-white px-6 py-3 rounded-md hover:bg-orange-600 dark:hover:bg-orange-300 transition-all duration-300 hover:shadow-lg inline-block magnetic-effect"
               data-scale="1.05"
@@ -1310,7 +1310,7 @@
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
-                src="../static/assets/shivpng.png"
+                src="/static/assets/shivpng.png"
                 alt="Shiv Kumar Mehandi Arts"
                 class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
                 loading="lazy"
@@ -1350,7 +1350,7 @@
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
-                src="../static/assets/hackgear.png"
+                src="/static/assets/hackgear.png"
                 alt="Hack Gear 1.0"
                 class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
                 loading="lazy"
@@ -1393,7 +1393,7 @@
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
-                src="../static/assets/Mail-Notifier.png"
+                src="/static/assets/Mail-Notifier.png"
                 alt="Mail Notifier"
                 class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
                 loading="lazy"
@@ -1438,7 +1438,7 @@
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
-                src="../static/assets/Ytdown.png"
+                src="/static/assets/Ytdown.png"
                 alt="YouTube Downloader"
                 class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
                 loading="lazy"
@@ -1477,7 +1477,7 @@
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
-                src="../static/assets/Ytdown.png"
+                src="/static/assets/Ytdown.png"
                 alt="YouTube Downloader"
                 class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
                 loading="lazy"
@@ -1516,7 +1516,7 @@
           >
             <div class="h-48 overflow-hidden rounded-md">
               <img
-                src="../static/assets/Ytdown.png"
+                src="/static/assets/Ytdown.png"
                 alt="YouTube Downloader"
                 class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 lazy-image"
                 loading="lazy"
@@ -1846,20 +1846,29 @@
               </div>
               <div class="mt-6 flex space-x-4">
                 <a
-                  href="#"
+                  href="https://linkedin.com/in/harsh-vardhan-285122235"
+                  target="_blank"
                   class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300"
-                  ><i class="fab fa-linkedin text-2xl"></i
-                ></a>
+                  aria-label="LinkedIn"
+                >
+                  <i class="fab fa-linkedin text-2xl"></i>
+                </a>
                 <a
-                  href="#"
+                  href="https://github.com/HarshVardhanLab"
+                  target="_blank"
                   class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300"
-                  ><i class="fab fa-dribbble text-2xl"></i
-                ></a>
+                  aria-label="GitHub"
+                >
+                  <i class="fab fa-github text-2xl"></i>
+                </a>
                 <a
-                  href="#"
+                  href="https://instagram.com/harshvardhan.dev"
+                  target="_blank"
                   class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300"
-                  ><i class="fab fa-behance text-2xl"></i
-                ></a>
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram text-2xl"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -1909,7 +1918,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <!-- Footer -->
 <footer
   class="py-12 px-6 bg-gray-800 dark:bg-gray-900 text-white transition-colors duration-300"
