@@ -3,18 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>port-nexus-glow</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>
+      Harshvardhan - Software Developer Portfolio | Python, AI, Cybersecurity
+    </title>
 
-    <meta property="og:title" content="port-nexus-glow" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Harsh Vardhan - Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies. View portfolio projects and get in touch for collaboration."
+    />
+    <meta
+      name="keywords"
+      content="software developer, python developer, AI/ML, cybersecurity, cloud computing, web development, portfolio"
+    />
+    <meta name="author" content="Harsh Vardhan" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Tags -->
+    <meta
+      property="og:title"
+      content="Harsh Vardhan - Software Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies. View portfolio projects and get in touch."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://harshvardhan-mu.vercel.app" />
+    <meta
+      property="og:image"
+      content="https://harshvardhan-mu.vercel.app/static/assets/harshvardhan.jpeg"
+    />
+    <meta property="og:site_name" content="Harsh Vardhan Portfolio" />
 
+    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      name="twitter:title"
+      content="Harsh Vardhan - Software Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies."
+    />
+    <meta
+      name="twitter:image"
+      content="https://harshvardhan-mu.vercel.app/static/assets/harshvardhan.jpeg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+    <link rel="manifest" href="/static/manifest.json" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+    />
+    <link rel="preload" href="{{ url_for('static', filename='assets/harshvardhan.jpeg') }}" as="image" />
+    <link rel="preload" href="styles.css" as="style" />
+
+    <!-- Performance Optimized CDN Links -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <meta name="theme-color" content="#f97316" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Harsh Vardhan",
+        "jobTitle": "Software Developer",
+        "description": "Software Developer specializing in Python, AI/ML, Cybersecurity, and Cloud technologies",
+        "url": "https://harshvardhan-mu.vercel.app",
+        "image": "https://harshvardhan-mu.vercel.app/static/assets/harshvardhan.jpeg",
+        "sameAs": [
+          "https://github.com/HarshVardhanLab",
+          "https://linkedin.com/in/harsh-vardhan-285122235",
+          "https://discord.com/users/1385134642004361337"
+        ],
+        "knowsAbout": [
+          "Python",
+          "AI/ML",
+          "Cybersecurity",
+          "Cloud Computing",
+          "Web Development"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Nova Coders Community"
+        }
+      }
+    </script>
   </head>
 
   <body>
