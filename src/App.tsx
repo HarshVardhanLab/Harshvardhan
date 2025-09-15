@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
+import FloatingOrbs from "./components/ui/FloatingOrbs";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -24,9 +25,10 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="min-h-screen flex flex-col">
+          <div className="min-h-screen flex flex-col relative">
+            <FloatingOrbs />
             <Header />
-            <main id="main-content" className="flex-1">
+            <main id="main-content" className="flex-1 relative z-10">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />

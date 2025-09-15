@@ -64,6 +64,7 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-surface": "var(--gradient-surface)",
+        "gradient-radial": "radial-gradient(circle at center, var(--tw-gradient-stops))",
       },
       boxShadow: {
         soft: "var(--shadow-soft)",
