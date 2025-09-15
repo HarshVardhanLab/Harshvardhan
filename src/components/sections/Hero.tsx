@@ -13,7 +13,7 @@ const socialLinks = [
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-surface">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-surface pt-20 md:pt-16">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-hero opacity-10" />
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
