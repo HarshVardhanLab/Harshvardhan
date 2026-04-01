@@ -1,135 +1,116 @@
-# Harsh Vardhan Portfolio
+# Harsh Vardhan - 3D Portfolio
 
-> **Software Developer | Ethical Hacker | Tech Innovator**
+A cutting-edge 3D portfolio website built with Next.js, React Three Fiber, and Framer Motion. Features an immersive "Obsidian Architect" design system with glassmorphism, 3D elements, and smooth animations.
 
-A modern, responsive portfolio website showcasing my projects, skills, and professional journey in software development, ethical hacking, and technology innovation.
+## Features
 
-## 🌟 Live Demo
+- **3D Interactive Elements**: Built with React Three Fiber and Three.js
+- **Smooth Animations**: Powered by Framer Motion
+- **Obsidian Design System**: Dark, premium aesthetic with cyber-orange accents
+- **Fully Responsive**: Mobile-first design approach
+- **Performance Optimized**: Dynamic imports and code splitting
+- **Type-Safe**: Built with TypeScript
 
-🚀 **[View Live Portfolio](https://harshvardhan-mu.vercel.app)**
+## Tech Stack
 
-## 📋 About
+- **Framework**: Next.js 14
+- **3D Graphics**: React Three Fiber, Three.js, @react-three/drei
+- **Animations**: Framer Motion
+- **Styling**: Tailwind CSS
+- **Typography**: Space Grotesk, Inter, Fira Code
+- **Language**: TypeScript
 
-This portfolio represents my passion for creating powerful, scalable, and user-centric digital solutions. From web applications to AI assistants, I craft code that solves real-world problems.
+## Design System
 
-> *"Code is my canvas, logic is my brush — I create to solve, and solve to create."*
+The portfolio follows "The Obsidian Architect" design philosophy:
 
-## ✨ Features
+### Colors
+- **Primary**: `#ffb690` / `#f97316` (Cyber Orange)
+- **Secondary**: `#c3c0ff` / `#3626ce` (Logic Layer Violet)
+- **Surface**: `#0c1322` (Obsidian Base)
 
-- **Modern Design**: Clean, responsive design with dark/light theme toggle
-- **Interactive Animations**: Smooth animations using Framer Motion
-- **Project Showcase**: Detailed project presentations with live demos and source code
-- **Blog Section**: Technical articles and development insights
-- **Contact Integration**: Easy ways to connect and collaborate
-- **SEO Optimized**: Meta tags and structured data for better search visibility
-- **Performance Optimized**: Fast loading times and smooth user experience
+### Typography
+- **Headlines**: Space Grotesk (futuristic, wide-aperture)
+- **Body**: Inter (high-legibility)
+- **Technical**: Fira Code (monospace for metadata)
 
-## 🛠️ Development Setup
+### Key Principles
+- No 1px borders - use tonal shifts instead
+- Glassmorphism for floating elements
+- Ambient shadows with tinted colors
+- High-contrast spacing
+- 3D depth through layering
 
-Get started with development in just a few steps:
+## Getting Started
 
+1. Install dependencies:
 ```bash
-# Clone the repository
-git clone https://github.com/HarshVardhanLab/portfolio-project.git
-
-# Navigate to project directory
-cd portfolio-project
-
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
 ```
 
-## 🚀 Tech Stack
+2. Run the development server:
+```bash
+npm run dev
+```
 
-Built with modern technologies for optimal performance:
+3. Open [http://localhost:3000](http://localhost:3000)
 
-### Frontend
-- **React 18** - Modern React with hooks and functional components
-- **TypeScript** - Type-safe development for better code quality
-- **Vite** - Fast build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework for rapid styling
-- **Framer Motion** - Production-ready motion library for animations
-
-### UI Components
-- **Shadcn/UI** - Beautiful, accessible component library
-- **Lucide React** - Customizable icon library
-- **Radix UI** - Low-level UI primitives for accessibility
-
-### Deployment
-- **Vercel** - Serverless deployment platform
-- **Git** - Version control and continuous deployment
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
-├── components/          # Reusable UI components
-│   ├── common/         # Shared components (Button, Card, etc.)
-│   ├── layout/         # Layout components (Header, Footer)
-│   ├── sections/       # Page sections (Hero, About, etc.)
-│   └── ui/            # Base UI components
-├── data/              # Static data and content
-│   ├── projects.ts    # Project information
-│   ├── posts.ts       # Blog posts
-│   └── skills.ts      # Skills and expertise
-├── pages/             # Main page components
-├── lib/               # Utility functions
-└── styles/            # Global styles and themes
+├── app/
+│   ├── about/          # About page
+│   ├── contact/        # Contact page
+│   ├── projects/       # Projects showcase
+│   ├── skills/         # Skills & technologies
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Home page
+│   └── globals.css     # Global styles
+├── components/
+│   ├── Navigation.tsx  # Top navigation bar
+│   ├── SideNav.tsx     # Side social links
+│   ├── Footer.tsx      # Footer component
+│   ├── Scene3D.tsx     # 3D scene for home
+│   └── HeroScene3D.tsx # 3D scene for about
 ```
 
-## 🎨 Key Features
+## Pages
 
-### 🌓 Theme System
-- Dark and light mode toggle
-- Smooth theme transitions
-- System preference detection
+- **Home** (`/`): Hero section with 3D elements, featured projects, and core philosophy
+- **About** (`/about`): Personal story, timeline, and expertise
+- **Projects** (`/projects`): Portfolio showcase with project cards
+- **Skills** (`/skills`): Technical skills and tools
+- **Contact** (`/contact`): Contact form and information
 
-### 📱 Responsive Design
-- Mobile-first approach
-- Optimized for all screen sizes
-- Touch-friendly interactions
+## Customization
 
-### ⚡ Performance
-- Lazy loading for optimal performance
-- Optimized images and assets
-- Fast page transitions
+### Update Personal Information
 
-### 🎭 Animations
-- Smooth page transitions
-- Interactive hover effects
-- Loading animations
+Edit the content in each page component:
+- `src/app/page.tsx` - Home page content
+- `src/app/about/page.tsx` - About page content
+- `src/app/projects/page.tsx` - Projects data
+- `src/app/skills/page.tsx` - Skills data
+- `src/app/contact/page.tsx` - Contact information
 
-## 🚀 Deployment
+### Modify 3D Scenes
 
-The portfolio is deployed on Vercel with automatic deployments on every push:
+Edit the 3D components:
+- `src/components/Scene3D.tsx` - Home page 3D scene
+- `src/components/HeroScene3D.tsx` - About page 3D scene
 
-1. **Production**: [harshvardhan-mu.vercel.app](https://harshvardhan-mu.vercel.app)
-2. **Staging**: Automatic preview deployments for branches
+### Update Colors
 
-## 🤝 Connect With Me
+Modify `tailwind.config.ts` to change the color scheme.
 
-- **GitHub**: [HarshVardhanLab](https://github.com/HarshVardhanLab)
-- **LinkedIn**: [harsh-vardhan-285122235](https://linkedin.com/in/harsh-vardhan-285122235)
-- **Email**: [harshvardhan02102002@gmail.com](mailto:harshvardhan02102002@gmail.com)
-- **Portfolio**: [harshvardhan-mu.vercel.app](https://harshvardhan-mu.vercel.app)
+## Build for Production
 
-## 📝 License
+```bash
+npm run build
+npm start
+```
 
-This project is open source and available under the [MIT License](LICENSE).
+## License
 
-## 🙏 Acknowledgments
-
-- Thanks to the React and TypeScript communities
-- Shadcn/UI for the beautiful component library
-- Vercel for seamless deployment
-- All the open-source contributors who make development better
-
----
-
-**Built with ❤️ by Harsh Vardhan**
+© 2024 Harsh Vardhan. All rights reserved.
